@@ -38,6 +38,10 @@ public class HoodSubsystem extends SubsystemBase {
         kPEntry = table.getDoubleTopic("kP").getEntry(0);
         kIEntry = table.getDoubleTopic("kI").getEntry(0);
         kDEntry = table.getDoubleTopic("kD").getEntry(0);
+
+        kPEntry.set(0);
+        kIEntry.set(0);
+        kDEntry.set(0);
     }
 
     public void setLevel(HoodLevel level) {

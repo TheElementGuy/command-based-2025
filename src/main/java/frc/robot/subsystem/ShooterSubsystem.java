@@ -15,7 +15,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class ShooterSubsystem extends SubsystemBase {
 
     public static final int TARGET_RPM = 2000;
-    public static final double DEFAULT_RUN_SPEED = 0.6;
+    public static final double DEFAULT_RUN_SPEED = 2000;
     
     private SparkMax shooterMotorA;
     private SparkMax shooterMotorB;
@@ -42,6 +42,11 @@ public class ShooterSubsystem extends SubsystemBase {
         kIEntry = table.getDoubleTopic("kI").getEntry(0);
         kDEntry = table.getDoubleTopic("kD").getEntry(0);
         kFFEntry = table.getDoubleTopic("kFF").getEntry(0);
+
+        kPEntry.set(0);
+        kIEntry.set(0);
+        kDEntry.set(0);
+        kFFEntry.set(0);
     }
 
     public void runMotors(double speed) {

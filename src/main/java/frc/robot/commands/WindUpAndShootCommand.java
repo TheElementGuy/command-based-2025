@@ -27,7 +27,7 @@ public class WindUpAndShootCommand extends Command {
     public void doShoot(boolean run) {
         if (run) {
             hood.setLevel(HoodLevel.UP);
-            if (shoot.setFlywheelWithPID(ShooterSubsystem.DEFAULT_RUN_SPEED) && hood.isUp()) {
+            if (shoot.setFlywheelWithPID(ShooterSubsystem.TARGET_RPM) && hood.isUp()) {
                 feed.run();
             } else {
                 feed.stop();

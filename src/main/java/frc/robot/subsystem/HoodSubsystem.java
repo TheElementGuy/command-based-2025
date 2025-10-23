@@ -40,9 +40,9 @@ public class HoodSubsystem extends SubsystemBase {
         kIEntry = table.getDoubleTopic("kI").getEntry(0);
         kDEntry = table.getDoubleTopic("kD").getEntry(0);
 
-        kPEntry.set(0);
+        kPEntry.set(0.08);
         kIEntry.set(0);
-        kDEntry.set(0);
+        kDEntry.set(0.0015);
 
         hoodPos = table.getDoubleTopic("hoodPos").getEntry(0);
     }

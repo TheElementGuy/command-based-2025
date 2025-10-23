@@ -15,7 +15,11 @@ public class HonkOrNot extends Command {
     }
 
     public void toHonkOrNot() {
-        
+        if (controller.getBButton()) {
+            horn.honk();
+        } else {
+            horn.unhonk();
+        }
     }
     
 }

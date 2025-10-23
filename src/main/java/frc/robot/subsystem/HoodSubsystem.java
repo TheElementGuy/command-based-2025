@@ -27,6 +27,7 @@ public class HoodSubsystem extends SubsystemBase {
     private DoubleEntry kPEntry;
     private DoubleEntry kIEntry;
     private DoubleEntry kDEntry;
+    private DoubleEntry hoodPos;
 
     public HoodSubsystem() {
         hoodMotor = new SparkMax(8, MotorType.kBrushless);
@@ -66,6 +67,15 @@ public class HoodSubsystem extends SubsystemBase {
 
     public double currentPosGoal() {
         return (level == HoodLevel.UP) ? TOP_HOOD_POSITION : 0;
+    }
+
+    public double getPos() {
+        return hoodMotor.getEncoder().getPosition();
+    }
+
+    @Override
+    public void periodic() {
+        hoodPos.set(getPos());
     }
 
 }

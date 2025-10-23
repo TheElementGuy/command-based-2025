@@ -25,6 +25,7 @@ public class ShooterSubsystem extends SubsystemBase {
     private DoubleEntry kIEntry;
     private DoubleEntry kDEntry;
     private DoubleEntry kFFEntry;
+    private DoubleEntry flywheelVel;
 
     public ShooterSubsystem() {
 
@@ -74,6 +75,15 @@ public class ShooterSubsystem extends SubsystemBase {
 
     public void stop() {
         runMotors(0);
+    }
+
+    public double getVelocity() {
+        return shooterMotorA.getEncoder().getVelocity();
+    }
+
+    @Override
+    public void periodic() {
+        flywheelVel.set(getVelocity());
     }
 
 }

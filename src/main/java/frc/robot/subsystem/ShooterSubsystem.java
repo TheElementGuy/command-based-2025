@@ -26,6 +26,7 @@ public class ShooterSubsystem extends SubsystemBase {
     private DoubleEntry kDEntry;
     private DoubleEntry kFFEntry;
     private DoubleEntry flywheelVel;
+    private DoubleEntry aimingFor;
 
     public ShooterSubsystem() {
 
@@ -44,10 +45,12 @@ public class ShooterSubsystem extends SubsystemBase {
         kDEntry = table.getDoubleTopic("kD").getEntry(0);
         kFFEntry = table.getDoubleTopic("kFF").getEntry(0);
 
-        kPEntry.set(0);
+        flywheelVel = table.getDoubleTopic("flywheelVel").getEntry(0);
+
+        kPEntry.set(0.00001);
         kIEntry.set(0);
         kDEntry.set(0);
-        kFFEntry.set(0);
+        kFFEntry.set(0.000185);
     }
 
     public void runMotors(double speed) {

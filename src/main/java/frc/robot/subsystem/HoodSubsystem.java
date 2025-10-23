@@ -43,6 +43,8 @@ public class HoodSubsystem extends SubsystemBase {
         kPEntry.set(0);
         kIEntry.set(0);
         kDEntry.set(0);
+
+        hoodPos = table.getDoubleTopic("hoodPos").getEntry(0);
     }
 
     public void setLevel(HoodLevel level) {
@@ -59,7 +61,7 @@ public class HoodSubsystem extends SubsystemBase {
         pid.setI(kIEntry.get());
         pid.setP(kPEntry.get());
 
-        hoodMotor.set(pid.calculate(hoodMotor.getEncoder().getPosition(), TOP_HOOD_POSITION));
+        hoodMotor.set(pid.calculate(hoodMotor.getEncoder().getPosition(), currentPosGoal()));
 
         return Math.abs((hoodMotor.getEncoder().getPosition() - currentPosGoal())) < 2;
 

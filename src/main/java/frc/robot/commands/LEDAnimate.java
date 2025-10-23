@@ -10,7 +10,7 @@ import frc.robot.subsystem.LEDStripSubsystem;
 
 public class LEDAnimate extends Command {
 
-    public static final LEDPattern RAINBOW_TRAIL = LEDPattern.rainbow(255, 255).scrollAtAbsoluteSpeed(MetersPerSecond.of(5), LEDStripSubsystem.SPACING);
+    public static final LEDPattern RAINBOW_TRAIL = LEDPattern.rainbow(255, 255).scrollAtAbsoluteSpeed(MetersPerSecond.of(0.05), LEDStripSubsystem.SPACING);
     
     private LEDStripSubsystem leds;
 

@@ -1,7 +1,5 @@
 package frc.robot.subsystem;
 
-import org.opencv.core.Mat.Tuple2;
-
 import com.revrobotics.spark.SparkMax;
 import com.revrobotics.spark.SparkBase.PersistMode;
 import com.revrobotics.spark.SparkBase.ResetMode;
@@ -12,7 +10,6 @@ import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.networktables.DoubleEntry;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
-import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class HoodSubsystem extends SubsystemBase {

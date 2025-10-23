@@ -2,7 +2,6 @@ package frc.robot.subsystem;
 
 import static edu.wpi.first.units.Units.Meters;
 
-import edu.wpi.first.math.util.Units;
 import edu.wpi.first.units.measure.Distance;
 import edu.wpi.first.wpilibj.AddressableLED;
 import edu.wpi.first.wpilibj.AddressableLEDBuffer;

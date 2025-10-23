@@ -5,18 +5,9 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.XboxController;
-import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.Commands;
-import frc.robot.commands.DriveCommand;
-import frc.robot.commands.HonkOrNot;
-import frc.robot.commands.LEDAnimate;
-import frc.robot.commands.WindUpAndShootCommand;
-import frc.robot.subsystem.DriveSubsystem;
-import frc.robot.subsystem.FeederSubsystem;
-import frc.robot.subsystem.HoodSubsystem;
-import frc.robot.subsystem.HornSubsystem;
-import frc.robot.subsystem.LEDStripSubsystem;
-import frc.robot.subsystem.ShooterSubsystem;
+import edu.wpi.first.wpilibj2.command.*;
+import frc.robot.commands.*;
+import frc.robot.subsystem.*;
 
 public class RobotContainer {
 

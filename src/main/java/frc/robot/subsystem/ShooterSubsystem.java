@@ -26,7 +26,6 @@ public class ShooterSubsystem extends SubsystemBase {
     private DoubleEntry kDEntry;
     private DoubleEntry kFFEntry;
     private DoubleEntry flywheelVel;
-    private DoubleEntry aimingFor;
 
     public ShooterSubsystem() {
 

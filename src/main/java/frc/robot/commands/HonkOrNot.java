@@ -12,6 +12,8 @@ public class HonkOrNot extends Command {
     public HonkOrNot(HornSubsystem sub, XboxController cont) {
         horn = sub;
         controller = cont;
+
+        addRequirements(horn);
     }
 
     public void toHonkOrNot() {

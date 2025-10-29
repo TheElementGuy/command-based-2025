@@ -4,25 +4,19 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystem.HornSubsystem;
 
-public class HonkOrNot extends Command {
-
+public class AutoDriveUnhonk extends Command {
+    
     private HornSubsystem horn;
-    private XboxController controller;
 
-    public HonkOrNot(HornSubsystem sub, XboxController cont) {
+    public AutoDriveUnhonk(HornSubsystem sub) {
         horn = sub;
-        controller = cont;
 
         addRequirements(horn);
     }
 
     @Override
     public void execute() {
-        if (controller.getBButton()) {
-            horn.honk();
-        } else {
-            horn.unhonk();
-        }
+        horn.unhonk();
     }
 
 }

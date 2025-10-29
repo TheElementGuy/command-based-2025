@@ -21,4 +21,9 @@ public class DriveSubsystem extends SubsystemBase {
 		drive.arcadeDrive(toAndFro, rotation);
 	}
 
+	public void runAt(double at) {
+		rightMotor.set(at);
+		leftMotor.set(at);
+	}
+
 }

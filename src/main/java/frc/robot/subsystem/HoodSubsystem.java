@@ -5,8 +5,10 @@ import com.revrobotics.spark.SparkBase.PersistMode;
 import com.revrobotics.spark.SparkBase.ResetMode;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
 import com.revrobotics.spark.config.SparkMaxConfig;
+import com.revrobotics.spark.config.SparkBaseConfig.IdleMode;
 
 import edu.wpi.first.math.controller.PIDController;
+import edu.wpi.first.networktables.BooleanEntry;
 import edu.wpi.first.networktables.DoubleEntry;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
@@ -29,7 +31,8 @@ public class HoodSubsystem extends SubsystemBase {
     public HoodSubsystem() {
         hoodMotor = new SparkMax(8, MotorType.kBrushless);
         hoodMotor.getEncoder().setPosition(0);
-        hoodMotor.configure(new SparkMaxConfig().inverted(true), ResetMode.kResetSafeParameters, PersistMode.kNoPersistParameters);
+        //Idle mode only for debug
+        hoodMotor.configure(new SparkMaxConfig().inverted(true).idleMode(IdleMode.kCoast), ResetMode.kResetSafeParameters, PersistMode.kNoPersistParameters);
         pid = new PIDController(0, 0, 0);
 
         NetworkTable table = NetworkTableInstance.getDefault().getTable("Hood PID");
